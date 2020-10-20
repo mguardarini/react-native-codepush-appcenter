@@ -1,114 +1,104 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
 import React from 'react';
 import {
-  SafeAreaView,
   StyleSheet,
-  ScrollView,
   View,
   Text,
-  StatusBar,
+  Dimensions,
+  Image
 } from 'react-native';
+import image from './assets/qrcode.png'
+import profileImage from './assets/profile2.jpeg'
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-const App: () => React$Node = () => {
+const App = () => {
   return (
     <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
-          </View>
-        </ScrollView>
-      </SafeAreaView>
+      <View style={{
+            backgroundColor:'#0572f5' 
+      }}>
+          <View style={{
+            backgroundColor:'#554544',
+            marginTop:'40%'
+            }}/> 
+      </View>
+      <View style={styles.behind}>
+            <Image
+                source={profileImage}
+                style = {{
+                  borderRadius: Math.round(Dimensions.get('window').width + Dimensions.get('window').height) / 2,
+                  width: Dimensions.get('window').width * 0.45,
+                  height: Dimensions.get('window').width * 0.45,
+                  backgroundColor:'#f00',
+                  justifyContent: 'center',
+                  alignItems: 'center'
+                }}>
+            </Image>   
+       </View>
+       <View style={{
+            marginTop:'30%'
+       }}>
+            <Text style={{
+              fontSize:28,
+              fontWeight:'bold',
+              textAlign:'center'  
+            }}>
+                Mauro Guardarini
+            </Text>  
+            <Text style={{
+                marginTop:'2%',
+                marginLeft:'23.5%',
+                fontSize:16
+           }}>
+                Twitter: @mguardarini
+            </Text>  
+            <Text style={{
+                marginTop:'2%',
+                marginLeft:'23.5%',
+                fontSize:16
+           }}>
+                Empresa: Lambda3
+            </Text>
+            <Text style={{
+                marginTop:'2%',
+                marginLeft:'23.5%',
+                fontSize:16
+           }}>
+                Evento: TDC Recife
+            </Text>
+            <Image
+                source={image}
+                style={styles.image}
+            />
+       </View>
     </>
   );
 };
 
 const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
+  behind: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    position: 'absolute',
+    left: 0,
+    top: 0,
+    width: '100%',
+    height: '50%'
+  },
+  image: {
+    width:200,
+    height:200,
+    marginTop:30,
+    marginLeft:'25%'
   },
   engine: {
     position: 'absolute',
     right: 0,
   },
-  body: {
-    backgroundColor: Colors.white,
-  },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
-  },
+  center: {
+    width: '100%',
+    height: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
+  }
 });
 
 export default App;
