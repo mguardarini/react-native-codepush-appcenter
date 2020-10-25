@@ -5,7 +5,7 @@ import {
 
 export default StyleSheet.create({
     containerPrincipal: {
-      backgroundColor:'green' 
+      backgroundColor:'#0572f5' 
     },
     imagemCiruclar: {
       borderRadius: Math.round(Dimensions.get('window').width + Dimensions.get('window').height) / 2,

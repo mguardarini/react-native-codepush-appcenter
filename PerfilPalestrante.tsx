@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import {
   View,
   Text,
@@ -11,7 +11,6 @@ import codePush from 'react-native-code-push';
 
 const PerfilPalestrante = () => {
   useEffect(() => {
-    // Atualiza o titulo do documento usando a API do browser
     codePush.sync({
       updateDialog: {
         appendReleaseDescription:true
@@ -43,7 +42,7 @@ const PerfilPalestrante = () => {
                 Empresa: Lambda3
             </Text>
             <Text style={styles.texto}>
-                Evento: TDC
+                Evento: TDC Recife
             </Text>
             <Image
                 source={image}

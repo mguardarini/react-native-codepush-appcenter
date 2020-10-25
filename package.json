@@ -8,8 +8,8 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
-    "codepush":"appcenter codepush release-react -a mguardarini/ReactNativeCodePush"
-
+    "codepush":"appcenter codepush release-react -a mguardarini/ReactNativeCodePush",
+    "releaseAndroid":"react-native run-android --variant=release"
   },
   "dependencies": {
     "appcenter-cli": "^2.7.1",
