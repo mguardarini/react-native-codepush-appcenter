@@ -7,8 +7,10 @@ import {
 import styles from './styles';
 import image from './assets/qrcode.png'
 import imagemPerfil from './assets/profile2.jpeg'
+import codePush from 'react-native-code-push';
+const codePushOptions = { checkFrequency: codePush.CheckFrequency.ON_APP_RESUME };
 
-const App = () => {
+const PerfilPalestrante = () => {
   return (
     <>
       <View style={styles.containerPrincipal}>
@@ -33,7 +35,7 @@ const App = () => {
                 Empresa: Lambda3
             </Text>
             <Text style={styles.texto}>
-                Evento: TDC Recife
+                Evento: TDC
             </Text>
             <Image
                 source={image}
@@ -44,5 +46,5 @@ const App = () => {
   );
 };
 
+export default codePush(codePushOptions)(PerfilPalestrante);
 
-export default App;
