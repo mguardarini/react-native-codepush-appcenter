@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -8,9 +8,17 @@ import styles from './styles';
 import image from './assets/qrcode.png'
 import imagemPerfil from './assets/profile2.jpeg'
 import codePush from 'react-native-code-push';
-const codePushOptions = { checkFrequency: codePush.CheckFrequency.ON_APP_RESUME };
 
 const PerfilPalestrante = () => {
+  useEffect(() => {
+    // Atualiza o titulo do documento usando a API do browser
+    codePush.sync({
+      updateDialog: {
+        appendReleaseDescription:true
+      },
+      installMode: codePush.InstallMode.IMMEDIATE
+    });
+  });
   return (
     <>
       <View style={styles.containerPrincipal}>
@@ -46,5 +54,5 @@ const PerfilPalestrante = () => {
   );
 };
 
-export default codePush(codePushOptions)(PerfilPalestrante);
+export default PerfilPalestrante;
 

@@ -7,7 +7,9 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "codepush":"appcenter codepush release-react -a mguardarini/ReactNativeCodePush"
+
   },
   "dependencies": {
     "appcenter-cli": "^2.7.1",

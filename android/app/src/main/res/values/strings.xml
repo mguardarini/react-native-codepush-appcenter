@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">TDC2020</string>
+    <!--Substituir com a chave de deploy da sua aplicação-->
     <string moduleConfig="true" name="CodePushDeploymentKey">nsnFTGRQbGL8FgLY32KN7f6uZtAmS1vNu1oer</string>
 </resources>
