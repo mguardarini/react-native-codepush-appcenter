@@ -33,7 +33,7 @@ const PerfilPalestrante = () => {
        </View>
        <View style={styles.containerTexto}>
             <Text style={styles.nomePalestrante}>
-                Mauro Guardarini
+                Fabio Damasceno
             </Text>  
             <Text style={styles.texto}>
                 Twitter: @mguardarini
